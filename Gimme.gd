@@ -4,10 +4,11 @@ var Block = preload("res://Block.tscn")
 var Lock = preload("res://Lock.tscn")
 var Key = preload("res://Key.tscn")
 var Next_Level = preload("res://Next_Level.tscn")
+var Restart = preload("res://Restart.tscn")
 
 var level = -1
 var objects = null
-var levels = [[Next_Level], [Lock, Key], [Block]]
+var levels = [[Next_Level], [Lock, Key], [Block, Restart]]
 
 func _ready():
 	next_level()
@@ -18,6 +19,10 @@ func next_level():
 	disabled = false
 	for object in get_tree().get_nodes_in_group("object"):
 		object.queue_free()
+
+func restart():
+	level -= 1
+	next_level()
 
 func _on_Gimme_pressed():
 	if not objects.empty():

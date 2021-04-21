@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Next_Level.gd" type="Script" id=1]
-[ext_resource path="res://Next_Level_Button.gd" type="Script" id=2]
+[ext_resource path="res://Restart.gd" type="Script" id=1]
+[ext_resource path="res://Restart_Button.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40, 10 )
+extents = Vector2( 30, 10 )
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends CollisionShape2D
@@ -14,7 +14,7 @@ func _input_event(viewport, event, shape_idx):
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			emit_signal(\"clicked\", $\"..\")"
 
-[node name="Next_Level" type="RigidBody2D" groups=[
+[node name="Restart" type="RigidBody2D" groups=[
 "object",
 ]]
 input_pickable = true
@@ -22,11 +22,11 @@ gravity_scale = 10.0
 script = ExtResource( 1 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = -40.0
+margin_left = -30.0
 margin_top = -10.0
-margin_right = 40.0
+margin_right = 30.0
 margin_bottom = 10.0
-text = "Next level"
+text = "Restart"
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
