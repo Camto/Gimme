@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Gimme.gd" type="Script" id=2]
-[ext_resource path="res://Block.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1580, 760 )
@@ -41,7 +40,4 @@ position = Vector2( 1040, -440 )
 shape = SubResource( 2 )
 
 [node name="Objects" type="Node" parent="."]
-
-[node name="Block" parent="Objects" instance=ExtResource( 3 )]
-position = Vector2( 501.19, 107.398 )
 [connection signal="pressed" from="Gimme" to="Gimme" method="_on_Gimme_pressed"]
