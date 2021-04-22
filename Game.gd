@@ -20,7 +20,7 @@ func free_object(object):
 	object.queue_free()
 
 func _on_object_pressed(object):
-	if !captured_object:
+	if not captured_object:
 		captured_object = object
 		captured_object.captured = true
 
@@ -31,6 +31,6 @@ func _on_object_unpressed(object):
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-		if captured_object and !event.pressed:
+		if captured_object and not event.pressed:
 			captured_object.captured = false
 			captured_object = null
