@@ -3,6 +3,7 @@ extends Node2D
 var captured_object = null
 
 func _ready():
+	randomize()
 	for object in get_tree().get_nodes_in_group("object"):
 		make_capturable(object)
 

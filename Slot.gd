@@ -29,6 +29,7 @@ func insert_x():
 	$Sprite.modulate.a = 1
 	board.bounce_ = true
 	board.played(self)
+	board.check_for_win()
 	if board.winner == null:
 		board.play_o()
 		board.check_for_win()
