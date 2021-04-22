@@ -24,6 +24,8 @@ func _body_entered(body):
 	if body.is_in_group("key"):
 		var new_object = Next_Level.instance()
 		new_object.position = position
+		new_object.linear_velocity = Vector2(0.0, -100.0)
+		new_object.angular_velocity = rand_range(-PI, PI)
 		$"/root/Game".free_object(self)
 		$"/root/Game".free_object(body)
 		$"/root/Game".new_object(new_object)

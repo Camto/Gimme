@@ -75,5 +75,7 @@ func _on_Win_Timer_timeout():
 	else:
 		new_object = Restart.instance()
 	new_object.position = position
+	new_object.linear_velocity = Vector2(0.0, -100.0)
+	new_object.angular_velocity = rand_range(-PI, PI)
 	$"/root/Game".free_object(self)
 	$"/root/Game".new_object(new_object)
