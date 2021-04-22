@@ -8,10 +8,14 @@
 [sub_resource type="CircleShape2D" id=2]
 radius = 12.0
 
-[node name="Car" type="Node2D"]
+[node name="Car" type="Node2D" groups=[
+"object",
+]]
 script = ExtResource( 1 )
 
-[node name="Body" type="RigidBody2D" parent="."]
+[node name="Body" type="RigidBody2D" parent="." groups=[
+"car",
+]]
 position = Vector2( 0, -24 )
 gravity_scale = 10.0
 __meta__ = {

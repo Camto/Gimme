@@ -9,9 +9,15 @@ var Tic_Tac_Toe = preload("res://Tic_Tac_Toe.tscn")
 var X = preload("res://X.tscn")
 var Car = preload("res://Car.tscn")
 
-var level = -1
+var level = 2
 var objects = null
-var levels = [[Next_Level], [Lock, Key], [Lock, Tic_Tac_Toe, X, X, X, X, X], [Car, Block, Block, Block, Restart]]
+var levels = [
+	[Next_Level],
+	[Lock, Key],
+	[Lock, Tic_Tac_Toe, X, X, X, X, X],
+	[Car, Block],
+	[Block, Block, Block, Restart]
+]
 
 func _ready():
 	next_level()

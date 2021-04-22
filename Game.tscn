@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Pixel_5x3.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Gimme.gd" type="Script" id=3]
+[ext_resource path="res://Car_Outline.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1580, 760 )
@@ -45,6 +46,9 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1040, -440 )
 shape = SubResource( 2 )
+
+[node name="Car_Outline" parent="." instance=ExtResource( 4 )]
+position = Vector2( 920, 572 )
 
 [node name="Objects" type="Node" parent="."]
 [connection signal="pressed" from="Gimme" to="Gimme" method="_on_Gimme_pressed"]
