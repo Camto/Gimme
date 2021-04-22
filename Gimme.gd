@@ -9,7 +9,7 @@ var Tic_Tac_Toe = preload("res://Tic_Tac_Toe.tscn")
 var X = preload("res://X.tscn")
 var Car = preload("res://Car.tscn")
 
-var level = 1
+var level = 4
 var objects = []
 
 func _ready():
