@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Lock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Key.tscn" type="PackedScene" id=2]
+
+[node name="Level_1" type="Node"]
+
+[node name="Gimme_Objects" type="Node" parent="."]
+
+[node name="Lock" parent="Gimme_Objects" instance=ExtResource( 1 )]
+
+[node name="Key" parent="Gimme_Objects" instance=ExtResource( 2 )]
+
+[node name="Starting_Objects" type="Node" parent="."]

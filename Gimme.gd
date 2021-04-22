@@ -9,25 +9,30 @@ var Tic_Tac_Toe = preload("res://Tic_Tac_Toe.tscn")
 var X = preload("res://X.tscn")
 var Car = preload("res://Car.tscn")
 
-var level = 2
-var objects = null
-var levels = [
-	[Next_Level],
-	[Lock, Key],
-	[Lock, Tic_Tac_Toe, X, X, X, X, X],
-	[Car, Block],
-	[Block, Block, Block, Restart]
-]
+var level = 1
+var objects = []
 
 func _ready():
-	next_level()
+	restart()
 
 func next_level():
-	level += 1
-	objects = levels[level].duplicate()
 	disabled = false
 	for object in $"../Objects".get_children():
 		$"..".free_object(object)
+	
+	level += 1
+	var level_scene = load("res://Level_%d.tscn" % level).instance()
+	
+	objects = []
+	var gimme_objects = level_scene.get_node("Gimme_Objects")
+	for gimme_object in gimme_objects.get_children():
+		gimme_objects.remove_child(gimme_object)
+		objects.push_back(gimme_object)
+	
+	var new_objects = level_scene.get_node("Starting_Objects")
+	for new_object in new_objects.get_children():
+		new_objects.remove_child(new_object)
+		$"..".new_object(new_object)
 
 func restart():
 	level -= 1
@@ -35,7 +40,7 @@ func restart():
 
 func _on_Gimme_pressed():
 	if not objects.empty():
-		var new_object = objects.pop_front().instance()
+		var new_object = objects.pop_front()
 		new_object.position = $"../Gimme_Center".position
 		$"..".new_object(new_object)
 	
