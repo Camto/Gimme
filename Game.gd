@@ -4,8 +4,6 @@ var captured_object = null
 
 func _ready():
 	randomize()
-	for object in get_tree().get_nodes_in_group("object"):
-		make_capturable(object)
 
 func make_capturable(object):
 	object.connect("pressed", self, "_on_object_pressed")

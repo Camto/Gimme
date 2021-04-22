@@ -5,7 +5,7 @@
 [ext_resource path="res://Wheel.gd" type="Script" id=3]
 [ext_resource path="res://Wheel.png" type="Texture" id=4]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 12.0
 
 [node name="Car" type="Node2D" groups=[
@@ -42,7 +42,7 @@ scale = Vector2( 8, 8 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Wheel2" type="RigidBody2D" parent="."]
 position = Vector2( 24, 4 )
@@ -57,7 +57,7 @@ scale = Vector2( 8, 8 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel2"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
 position = Vector2( -24, -8 )
