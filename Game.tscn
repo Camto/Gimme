@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://Gimme.gd" type="Script" id=2]
+[ext_resource path="res://Pixel_5x3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Gimme.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1580, 760 )
@@ -13,12 +14,16 @@ extents = Vector2( 540, 740 )
 script = ExtResource( 1 )
 
 [node name="Gimme" type="Button" parent="."]
-margin_left = 520.0
-margin_top = 40.0
-margin_right = 580.0
-margin_bottom = 60.0
+margin_left = 468.0
+margin_top = 64.0
+margin_right = 572.0
+margin_bottom = 112.0
+custom_fonts/font = ExtResource( 2 )
 text = "Gimme"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Gimme_Center" type="Node2D" parent="."]
+position = Vector2( 520, 88 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 520, 300 )

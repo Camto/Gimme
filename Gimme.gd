@@ -29,7 +29,7 @@ func restart():
 func _on_Gimme_pressed():
 	if not objects.empty():
 		var new_object = objects.pop_front().instance()
-		new_object.position = get_position()
+		new_object.position = $"../Gimme_Center".position
 		$"..".new_object(new_object)
 	
 	if objects.empty():

@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Restart.gd" type="Script" id=1]
-[ext_resource path="res://Restart_Button.gd" type="Script" id=2]
+[ext_resource path="res://Pixel_5x3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Restart_Button.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30, 10 )
+extents = Vector2( 64, 24 )
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends CollisionShape2D
@@ -22,12 +23,13 @@ gravity_scale = 10.0
 script = ExtResource( 1 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = -30.0
-margin_top = -10.0
-margin_right = 30.0
-margin_bottom = 10.0
+margin_left = -64.0
+margin_top = -24.0
+margin_right = 64.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 2 )
 text = "Restart"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
