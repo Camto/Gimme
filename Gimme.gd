@@ -18,7 +18,7 @@ func next_level():
 	objects = levels[level].duplicate()
 	disabled = false
 	for object in get_tree().get_nodes_in_group("object"):
-		object.queue_free()
+		$"..".free_object(object)
 
 func restart():
 	level -= 1

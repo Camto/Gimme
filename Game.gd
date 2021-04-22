@@ -14,6 +14,11 @@ func new_object(object):
 	make_capturable(object)
 	$Objects.add_child(object)
 
+func free_object(object):
+	if captured_object == object:
+		captured_object = null
+	object.queue_free()
+
 func _on_object_pressed(object):
 	if !captured_object:
 		captured_object = object

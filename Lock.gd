@@ -24,6 +24,6 @@ func _body_entered(body):
 	if body.is_in_group("key"):
 		var new_object = Next_Level.instance()
 		new_object.position = position
-		self.queue_free()
-		body.queue_free()
+		$"/root/Game".free_object(self)
+		$"/root/Game".free_object(body)
 		$"/root/Game".new_object(new_object)
