@@ -7,10 +7,11 @@ var Next_Level = preload("res://Next_Level.tscn")
 var Restart = preload("res://Restart.tscn")
 var Tic_Tac_Toe = preload("res://Tic_Tac_Toe.tscn")
 var X = preload("res://X.tscn")
+var Car = preload("res://Car.tscn")
 
 var level = -1
 var objects = null
-var levels = [[Next_Level], [Lock, Key], [Lock, Tic_Tac_Toe, X, X, X, X, X], [Block, Block, Block, Restart]]
+var levels = [[Next_Level], [Lock, Key], [Lock, Tic_Tac_Toe, X, X, X, X, X], [Car, Block, Block, Block, Restart]]
 
 func _ready():
 	next_level()
@@ -19,7 +20,7 @@ func next_level():
 	level += 1
 	objects = levels[level].duplicate()
 	disabled = false
-	for object in get_tree().get_nodes_in_group("object"):
+	for object in $"../Objects".get_children():
 		$"..".free_object(object)
 
 func restart():
