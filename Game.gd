@@ -11,7 +11,7 @@ func make_capturable(object):
 
 func new_object(object):
 	make_capturable(object)
-	$Objects.add_child(object)
+	$Objects.call_deferred("add_child", object)
 
 func free_object(object):
 	if captured_object == object:

@@ -3,7 +3,7 @@
 [ext_resource path="res://Lock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Key.tscn" type="PackedScene" id=2]
 
-[node name="Level_1" type="Node"]
+[node name="Level_2" type="Node"]
 
 [node name="Gimme_Objects" type="Node" parent="."]
 

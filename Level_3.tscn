@@ -4,7 +4,7 @@
 [ext_resource path="res://Tic_Tac_Toe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://X.tscn" type="PackedScene" id=3]
 
-[node name="Level_1" type="Node"]
+[node name="Level_3" type="Node"]
 
 [node name="Gimme_Objects" type="Node" parent="."]
 
