@@ -8,7 +8,7 @@ var Restart = preload("res://Restart.tscn")
 var Tic_Tac_Toe = preload("res://Tic_Tac_Toe.tscn")
 var X = preload("res://X.tscn")
 
-var level = 1
+var level = -1
 var objects = null
 var levels = [[Next_Level], [Lock, Key], [Lock, Tic_Tac_Toe, X, X, X, X, X], [Block, Block, Block, Restart]]
 

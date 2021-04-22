@@ -47,8 +47,6 @@ func play_o():
 
 func check_for_win():
 	winner = calculate_winner()
-	if empty_slots.size() == 0:
-		winner = Player.O
 	if winner != null:
 		$Win_Timer.start()
 
@@ -66,6 +64,9 @@ func calculate_winner():
 	
 	if slots[0][2].piece == slots[1][1].piece and slots[1][1].piece == slots[2][0].piece:
 		return slots[0][2].piece
+	
+	if empty_slots.size() == 0:
+		return Player.O
 
 func _on_Win_Timer_timeout():
 	var new_object
