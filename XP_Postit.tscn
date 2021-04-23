@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Block.gd" type="Script" id=1]
+[ext_resource path="res://XP_Postit.png" type="Texture" id=2]
+
+[node name="XP_Postit" type="RigidBody2D" groups=[
+"object",
+]]
+input_pickable = true
+gravity_scale = 10.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -104, -96, 96, -100, 104, 100, -100, 104 )

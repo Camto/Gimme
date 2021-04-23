@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://XP_Login_Popup.gd" type="Script" id=1]
 [ext_resource path="res://XP_Login_Popup.png" type="Texture" id=2]
 [ext_resource path="res://Tahoma.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Ok.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 208, 120 )
@@ -63,9 +64,11 @@ secret = true
 margin_left = -40.0
 margin_top = 84.0
 margin_right = 32.0
-margin_bottom = 104.0
+margin_bottom = 108.0
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
+script = ExtResource( 4 )
+[connection signal="pressed" from="Ok" to="Ok" method="_pressed"]
